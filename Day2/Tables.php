@@ -85,5 +85,5 @@ function PrintTables($tableName,$connect,$colnames)
 }
 PrintTables("books",$connect,["author","b_name"]);
 
-PrintTables("users",$connect,"user_name");
+PrintTables("users",$connect,["user_name"]);
 ?>

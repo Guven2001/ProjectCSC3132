@@ -41,6 +41,7 @@ PrintTable("books",$connect);
 echo "<br>";
 //PrintTable("reviews",$connect);
 
+echo "............";
 
 function PrintTables($tableName,$connect,$colnames)
 {
@@ -84,5 +85,5 @@ function PrintTables($tableName,$connect,$colnames)
 }
 PrintTables("books",$connect,["author","b_name"]);
 
-//PrintTables("reviews",$connect,["reviewer_name","rating"]);
+PrintTables("users",$connect,"user_name");
 ?>

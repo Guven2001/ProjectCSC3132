@@ -59,6 +59,7 @@
 			die($e->getMessage());
 		}
 	}
+    PrintTable("students",$connect);
 	
 	if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		//echo "Got the POST request from client";

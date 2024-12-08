@@ -9,16 +9,16 @@ use webdevelopment;
 
 CREATE TABLE students(
 	id INT AUTO_INCREMENT PRIMARY KEY,
+	reg VARCHAR(50) NOT NULL,
 	name VARCHAR(100) NOT NULL,
 	age INT NOT NULL,
-	reg VARCHAR(50) NOT NULL,
 	course VARCHAR(100) NOT NULL
 );
 
-INSERT INTO students (name, age, reg, course)
+INSERT INTO students (reg, name, age, course)
 VALUES
-('Ananthitha Johnson', 23, '2020ASP60', 'Computer Science'),
-('Guventha Ravichandran', 23, '2020ASP27', 'Computer Science'),
-('Sathursha Kengatharan', 23, '2020ASP35', 'Applied Mathematics & Computing'),
-('Shampavi Suntharalingam', 23, '2020ASP26', 'Data Science'),
-('Sakitha Santhalingam', 23, '2020ASB11', 'Environmental Science');
+('2020ASP60', 'Ananthitha Johnson', 23, 'Computer Science'),
+('2020ASP27', 'Guventha Ravichandran', 23, 'Computer Science'),
+('2020ASP35', 'Sathursha Kengatharan', 23, 'Applied Mathematics & Computing'),
+('2020ASP26', 'Shampavi Suntharalingam', 23, 'Data Science'),
+('2020ASB11', 'Sakitha Santhalingam', 23, 'Environmental Science');

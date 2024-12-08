@@ -41,7 +41,7 @@
 	function Insert($connect,$reg,$name,$age,$course){
 		try {
 		//Query
-			$sql = "INSERT INTO STUDENTS VALUES('$reg','$name',$age,'$course')";
+			$sql = "INSERT INTO students VALUES('$reg','$name',$age,'$course')";
 			//echo "$sql";
 		//excute the quey
 			$result = mysqli_query($connect,$sql);

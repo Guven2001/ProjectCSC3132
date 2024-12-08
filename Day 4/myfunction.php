@@ -1,5 +1,5 @@
 <?php
-
+require_once 'dbconf.php';
 function PrintTable($tableName,$connect){
     try {
         $sql = "SELECT * FROM $tableName";
@@ -36,11 +36,10 @@ function PrintTable($tableName,$connect){
     }
     
     
-    //PrintTable("students",$connect);
+    PrintTable('students',$connect);
     echo "<br>";
-    //PrintTable("reviews",$connect);
     
-    echo "............";
+
 
     function GetStudentDetails($connect){
         //query
@@ -86,9 +85,13 @@ function PrintTable($tableName,$connect){
         catch(Exception $e){
             die($e->getmessage());
         }
-        }
+    }
+    GetStudentDetails($connect);
+        
 
-        function GetStudentid($connect){
+
+    
+        function GetStudentid($id,$connect){
             //query
             try{
             
@@ -106,7 +109,7 @@ function PrintTable($tableName,$connect){
                     foreach($col as $value){
                         echo "<td>$value->name</td>";
                     }
-                    echo "<td>View Student's Details</td>";
+                    //echo "<td>View Student's Details</td>";
                     echo "</tr>";
                     
     
@@ -116,8 +119,8 @@ function PrintTable($tableName,$connect){
                         foreach($row as $key=>$value){
                             echo "<td>$value</td>";
                         }
-                        $id=$row['id'];
-                        echo "<td><a href='StudentDetails.php?id=$id'>View</a></td>";
+                       // $id=$row['id'];
+                        //echo "<td><a href='StudentDetails.php?id=$id'>View</a></td>";
                         echo "</tr>";
                        
                     }
@@ -130,4 +133,7 @@ function PrintTable($tableName,$connect){
                 die($e->getmessage());
             }
             }
-    ?>
+    
+
+
+            ?>

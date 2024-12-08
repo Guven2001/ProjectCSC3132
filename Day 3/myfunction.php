@@ -78,6 +78,5 @@ function PrintTable($tableName,$connect){
         }
     }
 
-    
 
     ?>

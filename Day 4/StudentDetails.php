@@ -12,8 +12,10 @@
     require_once 'myfunction.php';
     echo "Student's Details";
 
+    //Global variable
+
     $id=$_GET['id'];
-    getstudentdetails($id,$connect);
+    GetStudentid($id,$connect);
 
     ?>
 </body>

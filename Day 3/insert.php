@@ -3,10 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+	<title>Inserting To Table</title>
 </head>
 <body>
-	<form action="addData.php" method="POST">
+	<form action="insert.php" method="POST">
 		<table>
 			<tr>
 				<td align="right">Registration Number:</td>
@@ -25,20 +25,20 @@
 				<td>
 					<select name="course">
 						<option value="IT">IT</option>
-						<option value="ICT">ICT</option>
-						<option value="CSC">CSC</option>
+						<option value="AMC">AMC</option>
+						<option value="CS">CS</option>
 					</select>
 				</td>
 			</tr>
 			<tr>
 				<td></td>
-				<td><input type="submit" value="Add a new student" /></td>
+				<td><input type="Submit" value="Add a new Student" /></td>
 			</tr>
 		</table>
 	</form>
 	<?php
 	require_once 'dbconf.php';
-	function AddData($connect,$reg,$name,$age,$course){
+	function Insert($connect,$reg,$name,$age,$course){
 		try {
 		//Query
 			$sql = "INSERT INTO STUDENTS VALUES('$reg','$name',$age,'$course')";
@@ -62,7 +62,7 @@
 		$name = $_POST['name'];
 		$age = $_POST['age'];
 		$course = $_POST['course'];
-		AddData($connect,$reg,$name,$age,$course);
+		Insert($connect,$reg,$name,$age,$course);
 	}
 	
 	

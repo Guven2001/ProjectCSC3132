@@ -42,6 +42,7 @@
 	</form>
 	<?php
 	require_once 'dbconf.php';
+    require_once 'myfunction.php';
 	function Insert($connect,$id,$reg,$name,$age,$course){
 		try {
 		//Query
@@ -59,7 +60,7 @@
 			die($e->getMessage());
 		}
 	}
-    PrintTable("students",$connect);
+    //PrintTable("students",$connect);
 	
 	if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		//echo "Got the POST request from client";

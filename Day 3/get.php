@@ -27,8 +27,6 @@
         //serach form
         echo $_SERVER['PHP_SELF'];
        
-
-
     ?>
     <?php
         if(isset($_GET['name']) && $_GET['name']!=''){

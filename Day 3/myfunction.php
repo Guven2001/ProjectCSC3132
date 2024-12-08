@@ -43,7 +43,7 @@ function PrintTable($tableName,$connect){
     echo "............";
     
 
-    function search_student($name,$connect){
+    function SearchStudent($name,$connect){
         try{
     
             $sql="select * from students where name like '%$name%' ";

@@ -34,7 +34,7 @@
         if(isset($_GET['name']) && $_GET['name']!=''){
             SearchStudent($_GET['name'],$connect);
         }
-        PrintTable("students",$connect,['reg','name','age','course']);
+        PrintTable("students",$connect,['id','reg','name','age','course']);
     ?> 
     
 </body>

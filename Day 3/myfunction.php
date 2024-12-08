@@ -1,46 +1,47 @@
 <?php
 
-function print_table($name,$connect,$arr){
-    //query
-    try{
+function PrintTable($tableName,$connect){
+    try {
+        $sql = "SELECT * FROM $tableName";
     
-        $sql="select ";
-        for($i=0; $i<sizeof($arr)-1;$i++){
-            $sql.=$arr[$i].",";
-        }
-        $sql .=$arr[sizeof($arr)-1]." from $name";
-    
-        //$sq1="SELECT * FROM $name";
-    
-        //execute the query
-        $result=mysqli_query($connect,$sql);
-    
-        //check if data exists in the table
-        if(mysqli_num_rows($result)>0){
+        $result = mysqli_query($connect,$sql);
+        if (mysqli_num_rows($result) > 0) {
             echo "<table border='1'>";
-            $col=mysqli_fetch_fields($result);
+    
+            $col = mysqli_fetch_fields($result);
             echo "<tr>";
-            foreach($arr as $col){
-                echo "<td>$col</td>";
+    
+            foreach ($col as $value){
+                echo "<td>$value->name</td>";
             }
             echo "</tr>";
-           
-            while($row = mysqli_fetch_assoc($result)){
+            
+            while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
-                foreach($row as $key=>$value){
+                foreach ($row as $key => $value) {
                     echo "<td>$value</td>";
                 }
                 echo "</tr>";
             }
             echo "</table>";
-        }else{
+        }
+         else {
             echo "No results";
         }
+        
+    } 
+    catch (Exception $e) {
+        die($e->getMessage());
     }
-    catch(Exception $e){
-        die($e->getmessage());
     }
-    }
+    
+    
+    PrintTable("books",$connect);
+    echo "<br>";
+    //PrintTable("reviews",$connect);
+    
+    echo "............";
+    
 
     function search_student($name,$connect){
         try{

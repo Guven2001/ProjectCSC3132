@@ -1,2 +1,24 @@
 service apache2ctl status
 apache2ctl start
+
+mysql -h 127.0.0.1 -P 3306 -u root -p
+
+CREATE DATABASE IF NOT EXISTS webdevelopment;
+
+use webdevelopment;
+
+CREATE TABLE students(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(100) NOT NULL,
+	age INT NOT NULL,
+	reg VARCHAR(50) NOT NULL,
+	course VARCHAR(100) NOT NULL
+);
+
+INSERT INTO students (name, age, reg, course)
+VALUES
+('Ananthitha Johnson', 23, '2020ASP60', 'Computer Science'),
+('Guventha Ravichandran', 23, '2020ASP27', 'Computer Science'),
+('Sathursha Kengatharan', 23, '2020ASP35', 'Applied Mathematics & Computing'),
+('Shampavi Suntharalingam', 23, '2020ASP26', 'Data Science'),
+('Sakitha Santhalingam', 23, '2020ASB11', 'Environmental Science');

@@ -8,6 +8,10 @@
 <body>
 	<form action="insert.php" method="POST">
 		<table>
+        <tr>
+				<td align="right">ID:</td>
+				<td><input type="number" name="id" /></td>
+			</tr>
 			<tr>
 				<td align="right">Registration Number:</td>
 				<td><input type="text" name="regno" /></td>
@@ -38,10 +42,10 @@
 	</form>
 	<?php
 	require_once 'dbconf.php';
-	function Insert($connect,$reg,$name,$age,$course){
+	function Insert($connect,$id,$reg,$name,$age,$course){
 		try {
 		//Query
-			$sql = "INSERT INTO students VALUES('$reg','$name',$age,'$course')";
+			$sql = "INSERT INTO students VALUES('$id','$reg','$name',$age,'$course')";
 			//echo "$sql";
 		//excute the quey
 			$result = mysqli_query($connect,$sql);
@@ -58,15 +62,14 @@
 	
 	if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		//echo "Got the POST request from client";
+        $id = $_POST['id'];
 		$reg = $_POST['regno'];
 		$name = $_POST['name'];
 		$age = $_POST['age'];
 		$course = $_POST['course'];
-		Insert($connect,$reg,$name,$age,$course);
+		Insert($connect,$id,$reg,$name,$age,$course);
 	}
 	
-	
-
 	?>
 
 </body>

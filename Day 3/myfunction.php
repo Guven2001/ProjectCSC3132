@@ -36,7 +36,7 @@ function PrintTable($tableName,$connect){
     }
     
     
-    PrintTable("students",$connect);
+    //PrintTable("students",$connect);
     echo "<br>";
     //PrintTable("reviews",$connect);
     

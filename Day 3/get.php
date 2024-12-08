@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <td > </td>
-                <td > <input type="submit" value="Search"/></td>
+                <td > <input type="Submit" value="Search"/></td>
                     
             </tr>
         </table>
@@ -26,21 +26,16 @@
 
         //serach form
         echo $_SERVER['PHP_SELF'];
-        //print_table("students",$connect,["id","name","age","course"]);
+       
 
-
-        //search_student('Nilanka',$connect);
-        //search_student('thisara',$connect);
 
     ?>
     <?php
         if(isset($_GET['name']) && $_GET['name']!=''){
-            search_student($_GET['name'],$connect);
+            SearchStudent($_GET['name'],$connect);
         }
-        print_table("students",$connect,['id','name','age','course']);
-    ?>
-
-    
+        PrintTable("students",$connect,['reg','name','age','course']);
+    ?> 
     
 </body>
 </html>

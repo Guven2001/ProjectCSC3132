@@ -64,9 +64,8 @@
 		$course = $_POST['course'];
 		AddData($connect,$reg,$name,$age,$course);
 	}
-	//display the table
-	//echo "Hello";
-	//insert data into student table
+	
+	
 
 	?>
 
